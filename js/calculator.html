@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title of the document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <form>
+    Number 1: <input type="text" name="num1" id="num1"><br>
+    Number 2: <input type="text" name="num2" id="num2"><br>
+    Result: <input type="text" name="result" id="result"><br>
+    <input type="button" value="ADD" onclick="add()">
+    <input type="button" value="SUB" onclick="sub()">
+    <input type="button" value="MUL" onclick="mul()">
+    <input type="button" value="DIV" onclick="div()">
+    <input type="button" value="MOD" onclick="mod()">
+  </form>
+  <script>
+    function add() {
+      var num1 = parseInt(document.getElementById("num1").value);
+      var num2 = parseInt(document.getElementById("num2").value);
+      if(isNaN(num1)||isNaN(num2)){
+        alert("Enter a proper numeric value");
+
+      }else{
+        var result = num1 + num2;
+        $('#result').val(result);
+      }
+
+    }
+    function sub() {
+      var num1 = parseInt(document.getElementById("num1").value);
+      var num2 = parseInt(document.getElementById("num2").value);
+      if(isNaN(num1)||isNaN(num2)){
+        alert("Enter a proper numeric value");
+
+      }else{
+        var result = num1 - num2;
+        $('#result').val(result);
+      }
+    }
+    function mul(){
+      var num1 = parseInt(document.getElementById("num1").value);
+      var num2 = parseInt(document.getElementById("num2").value);
+      if(isNaN(num1)||isNaN(num2)){
+        alert("Enter a proper numeric value");
+
+      }else{
+        var result = num1 * num2;
+        $('#result').val(result);
+      }
+    }
+    function div(){
+      var num1 = parseInt(document.getElementById("num1").value);
+      var num2 = parseInt(document.getElementById("num2").value);
+      if(isNaN(num1)||isNaN(num2)){
+        alert("Enter a proper numeric value");
+      }else if(num1==0 || num2==0) {
+        alert("Enter a Non Zero number");
+      }
+      else{
+        var result = num1 / num2;
+        $('#result').val(result);
+      }
+    }
+    function mod(){
+      var num1 = parseInt(document.getElementById("num1").value);
+      var num2 = parseInt(document.getElementById("num2").value);
+      if(isNaN(num1)||isNaN(num2)){
+        alert("Enter a proper numeric value");
+      }else if(num1==0 || num2==0) {
+        alert("Enter a Non Zero number");
+      }else{
+        var result = num1 % num2;
+        $('#result').val(result);
+      }
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html>
+
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title of the document</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <form>
+    First name: <input type="text" name="fname" id="fname"><br> Last name: <input type="text" name="lname" id="lname"><br> Email: <input type="email" name="email" id="email"><br> Password: <input type="password" name="pass" id="pass"><br>
+    <input type="button" value="Submit" onclick="validate()">
+  </form>
+  <script>
+    function validate() {
+
+      var fname = document.getElementById("fname");
+      var lanme = document.getElementById("lname");
+      var email = document.getElementById("email");
+      var pass = document.getElementById("pass");
+      var letters = /\d/g;
+      var passletters = /^[0-9a-zA-Z]+$/;
+      if (fname.value == "" || lname.value == "" || email.value == "" || pass.value == "") {
+        alert("Please fill all fields")
+      } else if (letters.test(fname.value) || letters.test(lname.value)) {
+        alert("Username cannot contain Numbers")
+      } else if (pass.value.length < 10) {
+        alert("password must be minimum 10 characters")
+      } else if (passletters.test(pass.value)) {
+        alert("Password must contain atleast one Number and special character")
+      }
+    }
+  </script>
+</body>
+
+</html>
